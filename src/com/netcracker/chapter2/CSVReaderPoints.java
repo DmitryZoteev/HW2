@@ -16,8 +16,7 @@ public class CSVReaderPoints {
             Point point = new Point(Double.parseDouble(record[0]), Double.parseDouble(record[1]));
             points.add(point);
         }
-        System.out.println(points);
         reader.close();
-        return null;
+        return points;
     }
 }
