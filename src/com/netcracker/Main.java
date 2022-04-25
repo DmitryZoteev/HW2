@@ -4,6 +4,7 @@ import com.netcracker.chapter1.LotteryTicket;
 import com.netcracker.chapter1.MagicSquare;
 import com.netcracker.chapter1.Angle;
 import com.netcracker.chapter1.Factorial;
+import com.netcracker.chapter2.CSVReaderPoints;
 import com.netcracker.chapter2.Car;
 import com.netcracker.chapter2.Point;
 import com.netcracker.chapter3.Employee;
@@ -61,16 +62,8 @@ public class Main {
 
         System.out.println("===============ex13==================");
         String filePath = "C:\\Users\\dmitr\\Desktop\\Java SpringSchool 2022\\Projects\\HW2\\src\\com\\netcracker\\points.csv";
-        CSVReader reader = new CSVReader(new FileReader(filePath));
-        List<Point> points = new ArrayList();
-
-        String[] record;
-        while ((record = reader.readNext()) != null) {
-            Point point = new Point(Double.parseDouble(record[0]), Double.parseDouble(record[1]));
-            points.add(point);
-        }
+        List<Point> points = CSVReaderPoints.getPointsList(filePath);
         System.out.println(points);
-        reader.close();
 
         System.out.println("=============chapter 3==============");
         System.out.println("===============ex1==================");
